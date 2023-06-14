@@ -1,7 +1,5 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-
 
 export default function Notes(props) {
   const [css, setCss] = useState(false);

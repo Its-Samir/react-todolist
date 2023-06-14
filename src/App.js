@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import AuthContext from "./AuthContext";
+import TodoContext from "./TodoContext";
 import { CreateArea } from "./components/createArea";
 import Notes from "./components/notes";
 import Weekday from "./components/Weekday";
 
 export default function App() {
 
-  const ctx = useContext(AuthContext);
+  const ctx = useContext(TodoContext);
 
   return (
     <div className="mainContainer">

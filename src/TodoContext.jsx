@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 
-const AuthContext = React.createContext({
+const TodoContext = React.createContext({
     notes: [],
     onSubmit: (newNote) => { },
     onDelete: (id) => { }
 });
 
-export function AuthContextProvider(props) {
+export function TodoContextProvider(props) {
 
     let getData = JSON.parse(localStorage.getItem('notes')) || [];
     const [notes, setNotes] = useState(getData);
@@ -37,10 +37,10 @@ export function AuthContextProvider(props) {
     }
 
     return (
-        <AuthContext.Provider value={{ notes: notes, onSubmit: submitNote, onDelete: deleteNote }}>
+        <TodoContext.Provider value={{ notes: notes, onSubmit: submitNote, onDelete: deleteNote }}>
             {props.children}
-        </AuthContext.Provider>
+        </TodoContext.Provider>
     )
 }
 
-export default AuthContext;
+export default TodoContext;
